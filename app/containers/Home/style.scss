@@ -1,0 +1,46 @@
+$body-color:#f3f3ed;
+$btn-color: #e0b686;
+$border-color:#dadada;
+
+body {
+  background: $body-color;
+}
+
+.ant-card {
+  .ant-card-cover {
+    border: 5px solid $border-color;
+  }
+  .ant-card-body {
+    background-color:$body-color;
+  }
+}
+
+.ant-btn {
+  &.ant-btn-primary {
+    background-color: $btn-color;
+    border-color: $btn-color;
+  }
+}
+
+.divider {
+  background-color: $border-color;
+  border: 5px solid $border-color;
+  width: 100%;
+  height: 5px;
+  margin: 50px 0;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.total {
+  text-align: right;
+}
+
+.bordered {
+  border: 2px solid $border-color
+}
