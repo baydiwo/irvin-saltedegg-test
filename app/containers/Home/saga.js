@@ -1,7 +1,7 @@
 // @flow
 import { call, put, takeLatest } from "redux-saga/effects";
 import { FETCH_DETAIL } from "./constants";
-import { fetchDetailSuccess, fetchDetailError, type SuccessPayloadType, type GetProductsSuccessActionType } from "./actions";
+import { fetchDetailSuccess, fetchDetailError, type GetProductsSuccessActionType } from "./actions";
 import type { Saga } from "redux-saga";
 
 import request from "../../utils/request";

@@ -1,4 +1,3 @@
-// @flow
 // import produce from 'immer';
 import homeReducer from "../reducer";
 import {
