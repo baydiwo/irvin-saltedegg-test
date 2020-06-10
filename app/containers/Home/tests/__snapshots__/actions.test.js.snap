@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home actions Default Action addQuantity 1`] = `
+Object {
+  "id": undefined,
+  "type": "app/Home/ADD_QUANTITY",
+  "value": Object {
+    "products": Array [
+      Object {
+        "currency": "SGD",
+        "image": "http://s3-ap-southeast-1.amazonaws.com/s3.irvinsaltedegg.com/engineering-test/images/product-1.jpg",
+        "name": "IPhone 7",
+        "price": "15",
+      },
+    ],
+  },
+}
+`;
+
+exports[`Home actions Default Action addToCart 1`] = `
+Object {
+  "id": Object {
+    "products": Array [
+      Object {
+        "currency": "SGD",
+        "image": "http://s3-ap-southeast-1.amazonaws.com/s3.irvinsaltedegg.com/engineering-test/images/product-1.jpg",
+        "name": "IPhone 7",
+        "price": "15",
+      },
+    ],
+  },
+  "type": "app/Home/ADD_TO_CART",
+}
+`;
+
+exports[`Home actions Default Action addToCart 2`] = `
+Object {
+  "id": Object {
+    "products": Array [
+      Object {
+        "currency": "SGD",
+        "image": "http://s3-ap-southeast-1.amazonaws.com/s3.irvinsaltedegg.com/engineering-test/images/product-1.jpg",
+        "name": "IPhone 7",
+        "price": "15",
+      },
+    ],
+  },
+  "type": "app/Home/ADD_TO_CART",
+}
+`;
+
+exports[`Home actions Default Action fetchDetailError 1`] = `
+Object {
+  "error": Object {
+    "error": "Some error message",
+  },
+  "type": "app/Home/FETCH_DETAIL_ERROR",
+}
+`;
+
+exports[`Home actions Default Action fetchDetailSuccess 1`] = `
+Object {
+  "products": Object {
+    "products": Array [
+      Object {
+        "currency": "SGD",
+        "image": "http://s3-ap-southeast-1.amazonaws.com/s3.irvinsaltedegg.com/engineering-test/images/product-1.jpg",
+        "name": "IPhone 7",
+        "price": "15",
+      },
+    ],
+  },
+  "type": "app/Home/FETCH_DETAIL_SUCCESS",
+}
+`;
+
+exports[`Home actions Default Action totalPrice 1`] = `
+Object {
+  "type": "app/Home/TOTAL_PRICE",
+}
+`;

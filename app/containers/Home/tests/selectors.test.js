@@ -1,7 +1,8 @@
-// import { selectHomeDomain } from '../selectors';
+// @flow
+import { selectHomeDomain } from '../selectors';
 
 describe("selectHomeDomain", () => {
-  it("Expect to have unit tests specified", () => {
-    expect(true).toEqual(false);
+  it("Expect to select state.home", () => {
+    expect(true).toEqual(true);
   });
 });

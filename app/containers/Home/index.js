@@ -47,39 +47,142 @@ export function Home({dispatch, home}) {
           <Content>
             <Row gutter={16}>
               <Col span={24}>
-                <Row>
-                  {products &&
-                    products.map((item, key) => (
-                      <Col span={8} key={key}>
-                        <Card
-                          hoverable
-                          style={{ width: 240 }}
-                          cover={<img alt="example" src={item.image} />}
-                        >
-                          <Row>
-                            <Col span={12}>
-                              <Meta
-                                title={item.name}
-                                description={convertCurrency(item.price)}
-                              />
-                            </Col>
-                            <Col span={12}>
-                              <Button
-                                type="primary"
-                                onClick={() => {
-                                  handleClick(item.name);
-                                }}
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Col>
-                          </Row>
-                        </Card>
-                      </Col>
-                    ))}
+                <Row gutter={16}>
+                  <Col span={7}>
+                    {products.map((item, key) => {
+                      if (key >= 1 && key <= 2) {
+                        return (
+                          <Col
+                            span={24}
+                            key={key}
+                            order={key}
+                          >
+                            <Card
+                              hoverable
+                              cover={
+                                <img
+                                  alt="example"
+                                  src={item.image}
+                                />
+                              }
+                            >
+                              <Row>
+                                <Col span={12}>
+                                  <Meta
+                                    title={item.name}
+                                    description={convertCurrency(
+                                      item.price
+                                    )}
+                                  />
+                                </Col>
+                                <Col
+                                  span={12}
+                                  align="right"
+                                >
+                                  <Button
+                                    type="primary"
+                                    onClick={() => {
+                                      handleClick(
+                                        item.name
+                                      );
+                                    }}
+                                  >
+                                    ADD TO CART
+                                  </Button>
+                                </Col>
+                              </Row>
+                            </Card>
+                          </Col>
+                        );
+                      }
+                    })}
+                  </Col>
+                  <Col span={10}>
+                    {products.map((item, key) => {
+                      if (key == 0) {
+                        return (
+                          <Col span={24} key={key} order={key}>
+                            <Card
+                              hoverable
+                              cover={<img alt="example" src={item.image} />}
+                            >
+                              <Row>
+                                <Col span={12}>
+                                  <Meta
+                                    title={item.name}
+                                    description={convertCurrency(item.price)}
+                                  />
+                                </Col>
+                                <Col span={12} align="right">
+                                  <Button
+                                    type="primary"
+                                    onClick={() => {
+                                      handleClick(item.name);
+                                    }}
+                                  >
+                                    ADD TO CART
+                                  </Button>
+                                </Col>
+                              </Row>
+                            </Card>
+                          </Col>
+                        );
+                      }
+                    })}
+                  </Col>
+                  <Col span={7}>
+                    {products.map((item, key) => {
+                      if (key > 2) {
+                        return (
+                          <Col
+                            span={24}
+                            key={key}
+                            order={key}
+                          >
+                            <Card
+                              hoverable
+                              cover={
+                                <img
+                                  alt="example"
+                                  src={item.image}
+                                />
+                              }
+                            >
+                              <Row>
+                                <Col span={12}>
+                                  <Meta
+                                    title={item.name}
+                                    description={convertCurrency(
+                                      item.price
+                                    )}
+                                  />
+                                </Col>
+                                <Col
+                                  span={12}
+                                  align="right"
+                                >
+                                  <Button
+                                    type="primary"
+                                    onClick={() => {
+                                      handleClick(
+                                        item.name
+                                      );
+                                    }}
+                                  >
+                                    ADD TO CART
+                                  </Button>
+                                </Col>
+                              </Row>
+                            </Card>
+                          </Col>
+                        );
+                      }
+                    })}
+                  </Col>
                 </Row>
               </Col>
             </Row>
+            <div className="divider" />
             <Cart />
           </Content>
         </Layout>

@@ -16,12 +16,8 @@ export function Cart({ dispatch, home }) {
   const { addedItems, total, tempTotal } = home;
 
   useEffect(() => {
-    
-  }, [addedItems]);
-  
-  useEffect(() => {
     dispatch(totalPrice());
-  }, [total]);
+  }, [addedItems, total, tempTotal]);
 
    const handleRemove = (id) => {
      dispatch(removeItem(id))
@@ -103,14 +99,14 @@ export function Cart({ dispatch, home }) {
   return (
     <>
       <Row gutter={16}>
-        <Col span={24}>
-          <div className="divider" />
+        <Col span={16} push={4}>
           <h2>Shopping Cart - {addedItems.length} items</h2>
           {addedItems && (
             <Table
               dataSource={addedItems}
               columns={columns}
               pagination={false}
+              className="margin-50-bottom"
               footer={() => (
                 <div className="total">
                   <h3>{convertCurrency(total)}</h3>

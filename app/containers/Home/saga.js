@@ -1,10 +1,12 @@
+// @flow
 import { call, put, takeLatest } from "redux-saga/effects";
 import { FETCH_DETAIL } from "./constants";
-import { fetchDetailSuccess, fetchDetailError } from "./actions";
+import { fetchDetailSuccess, fetchDetailError, type SuccessPayloadType, type GetProductsSuccessActionType } from "./actions";
+import type { Saga } from "redux-saga";
 
-import request from "utils/request";
+import request from "../../utils/request";
 
-export function* fetchDetail() {
+export function* fetchDetail(action: GetProductsSuccessActionType): Saga<void> {
   try {
     const { data } = yield call(
       request,
@@ -18,6 +20,6 @@ export function* fetchDetail() {
 }
 
 // Individual exports for testing
-export default function* homeSaga() {
+export default function* homeSaga(): Saga<void> {
   yield takeLatest(FETCH_DETAIL, fetchDetail);
 }

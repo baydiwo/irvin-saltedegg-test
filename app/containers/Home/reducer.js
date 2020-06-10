@@ -1,3 +1,4 @@
+// @flow
 /*
  *
  * Home reducer
@@ -5,6 +6,13 @@
  */
 import produce from "immer";
 import { DEFAULT_ACTION, FETCH_DETAIL_SUCCESS, ADD_TO_CART, REMOVE_ITEM, ADD_QUANTITY, TOTAL_PRICE } from "./constants";
+
+export type StateType = {
+  products: any,
+  addedItems: any,
+  total: number,
+  tempTotal: number,
+};
 
 export const initialState = {
   products: [],
@@ -18,17 +26,17 @@ const nameToId = (val) => {
 }
 
 /* eslint-disable default-case, no-param-reassign */
-const homeReducer = (state = initialState, action) =>
+const homeReducer = (state: StateType = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
       case DEFAULT_ACTION:
         break;
       case FETCH_DETAIL_SUCCESS:
-        Object.assign(draft, {
-          ...draft,
-          products: action.products,
-        });
-        break;
+        return {
+          ...state,
+          products: action.products
+        }
+
       case ADD_TO_CART:
         let addedItem = state.products.find(
           (item) => nameToId(item.name) === nameToId(action.id)
@@ -55,7 +63,7 @@ const homeReducer = (state = initialState, action) =>
             total: newTotal,
           };
         }
-        break;
+
       case REMOVE_ITEM:
         let itemToRemove = state.addedItems.find(
           (item) => nameToId(action.id) === nameToId(item.name)
@@ -72,7 +80,7 @@ const homeReducer = (state = initialState, action) =>
           addedItems: new_items,
           total: newTotal,
         };
-        break;
+
       case ADD_QUANTITY:
         if(action.value !== 0) {
 
@@ -86,9 +94,10 @@ const homeReducer = (state = initialState, action) =>
           return {
             ...state,
             total: newTotalItem,
+            tempTotal: newTotalItem,
           };
         }
-        break;
+
       case TOTAL_PRICE:
         let newProductData = [];
         for (const [key, value] of Object.entries(state.addedItems)) {
@@ -115,7 +124,7 @@ const homeReducer = (state = initialState, action) =>
           ...state,
           total: tempTotal,
         };
-        break;
+
     }
   });
 

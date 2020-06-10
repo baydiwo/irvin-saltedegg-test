@@ -7,6 +7,9 @@ body {
 }
 
 .ant-card {
+  margin-bottom: 20px;
+  border: none;
+
   .ant-card-cover {
     border: 5px solid $border-color;
   }
@@ -44,3 +47,12 @@ h2 {
 .bordered {
   border: 2px solid $border-color
 }
+
+// mixin
+@mixin marginPos($name, $size, $dir) {
+  .#{$name}-#{$size}-#{$dir} {
+    #{$name}-#{$dir}: #{$size}px;
+  }
+}
+
+@include marginPos('margin', 50, bottom);
