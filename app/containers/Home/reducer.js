@@ -5,7 +5,7 @@
  *
  */
 import produce from "immer";
-import { DEFAULT_ACTION, FETCH_DETAIL_SUCCESS, ADD_TO_CART, REMOVE_ITEM, ADD_QUANTITY, TOTAL_PRICE } from "./constants";
+import { DEFAULT_ACTION, FETCH_DETAIL_SUCCESS, FETCH_DETAIL_ERROR, ADD_TO_CART, REMOVE_ITEM, ADD_QUANTITY, TOTAL_PRICE } from "./constants";
 
 export type StateType = {
   products: any,
@@ -34,8 +34,8 @@ const homeReducer = (state: StateType = initialState, action) =>
       case FETCH_DETAIL_SUCCESS:
         return {
           ...state,
-          products: action.products
-        }
+          products: action.products,
+        };
 
       case ADD_TO_CART:
         let addedItem = state.products.find(
@@ -82,15 +82,15 @@ const homeReducer = (state: StateType = initialState, action) =>
         };
 
       case ADD_QUANTITY:
-        if(action.value !== 0) {
-
+        if (action.value !== 0) {
           const addedItemQty = state.addedItems.find(
             (item) => nameToId(item.name) === nameToId(action.id)
           );
-          
+
           addedItemQty.quantity = action.value;
-          const newTotalItem = Number(addedItemQty.quantity) * Number(addedItemQty.price);
-          
+          const newTotalItem =
+            Number(addedItemQty.quantity) * Number(addedItemQty.price);
+
           return {
             ...state,
             total: newTotalItem,
@@ -124,7 +124,6 @@ const homeReducer = (state: StateType = initialState, action) =>
           ...state,
           total: tempTotal,
         };
-
     }
   });
 

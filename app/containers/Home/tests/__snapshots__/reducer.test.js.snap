@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`homeReducer ADD_QUANTITY 1`] = `
+Object {
+  "addedItems": Array [],
+  "products": Array [],
+  "tempTotal": 0,
+  "total": 0,
+}
+`;
+
+exports[`homeReducer ADD_TO_CART 1`] = `
+Object {
+  "addedItems": Array [],
+  "products": Array [],
+  "tempTotal": 0,
+  "total": 0,
+}
+`;
+
+exports[`homeReducer FETCH_DETAIL_SUCCESS 1`] = `
+Object {
+  "addedItems": Array [],
+  "products": Array [],
+  "tempTotal": 0,
+  "total": 0,
+}
+`;
+
+exports[`homeReducer REMOVE_ITEM 1`] = `
+Object {
+  "addedItems": Array [],
+  "products": Array [],
+  "tempTotal": 0,
+  "total": 0,
+}
+`;
+
+exports[`homeReducer TOTAL_PRICE 1`] = `
+Object {
+  "addedItems": Array [],
+  "products": Array [],
+  "tempTotal": 0,
+  "total": 0,
+}
+`;

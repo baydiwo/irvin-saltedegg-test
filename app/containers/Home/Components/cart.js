@@ -9,8 +9,6 @@ import { convertCurrency } from "utils/price";
 import { createStructuredSelector } from "reselect";
 import makeSelectHome from "./../selectors";
 
-const { Column, ColumnGroup } = Table;
-
 export function Cart({ dispatch, home }) {
   
   const { addedItems, total, tempTotal } = home;
