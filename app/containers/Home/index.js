@@ -48,43 +48,27 @@ export function Home({dispatch, home}) {
             <Row gutter={16}>
               <Col span={24}>
                 <Row gutter={16}>
-                  <Col span={7}>
+                  <Col xs={24} sm={24} md={7}>
                     {products.map((item, key) => {
                       if (key >= 1 && key <= 2) {
                         return (
-                          <Col
-                            span={24}
-                            key={key}
-                            order={key}
-                          >
+                          <Col span={24} key={key} order={key}>
                             <Card
                               hoverable
-                              cover={
-                                <img
-                                  alt="example"
-                                  src={item.image}
-                                />
-                              }
+                              cover={<img alt="example" src={item.image} />}
                             >
                               <Row>
                                 <Col span={12}>
                                   <Meta
                                     title={item.name}
-                                    description={convertCurrency(
-                                      item.price
-                                    )}
+                                    description={convertCurrency(item.price)}
                                   />
                                 </Col>
-                                <Col
-                                  span={12}
-                                  align="right"
-                                >
+                                <Col span={12} align="right">
                                   <Button
                                     type="primary"
                                     onClick={() => {
-                                      handleClick(
-                                        item.name
-                                      );
+                                      handleClick(item.name);
                                     }}
                                   >
                                     ADD TO CART
@@ -97,7 +81,7 @@ export function Home({dispatch, home}) {
                       }
                     })}
                   </Col>
-                  <Col span={10}>
+                  <Col xs={24} sm={24} md={10}>
                     {products.map((item, key) => {
                       if (key == 0) {
                         return (
@@ -130,43 +114,27 @@ export function Home({dispatch, home}) {
                       }
                     })}
                   </Col>
-                  <Col span={7}>
+                  <Col xs={24} sm={24} md={7}>
                     {products.map((item, key) => {
                       if (key > 2) {
                         return (
-                          <Col
-                            span={24}
-                            key={key}
-                            order={key}
-                          >
+                          <Col span={24} key={key} order={key}>
                             <Card
                               hoverable
-                              cover={
-                                <img
-                                  alt="example"
-                                  src={item.image}
-                                />
-                              }
+                              cover={<img alt="example" src={item.image} />}
                             >
                               <Row>
                                 <Col span={12}>
                                   <Meta
                                     title={item.name}
-                                    description={convertCurrency(
-                                      item.price
-                                    )}
+                                    description={convertCurrency(item.price)}
                                   />
                                 </Col>
-                                <Col
-                                  span={12}
-                                  align="right"
-                                >
+                                <Col span={12} align="right">
                                   <Button
                                     type="primary"
                                     onClick={() => {
-                                      handleClick(
-                                        item.name
-                                      );
+                                      handleClick(item.name);
                                     }}
                                   >
                                     ADD TO CART

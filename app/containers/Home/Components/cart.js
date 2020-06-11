@@ -97,7 +97,10 @@ export function Cart({ dispatch, home }) {
   return (
     <>
       <Row gutter={16}>
-        <Col span={16} push={4}>
+        <Col
+          xs={{ span: 20, offset: 2 }}
+          lg={{ span: 16, offset: 4 }}
+        >
           <h2>Shopping Cart - {addedItems.length} items</h2>
           {addedItems && (
             <Table
